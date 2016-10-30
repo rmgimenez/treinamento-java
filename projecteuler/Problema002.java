@@ -7,15 +7,29 @@ package projecteuler;
 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
 
 By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
-
+Problema corrigido
  */
 public class Problema002
 {
 
 	public static void main(String[] args)
 	{
-		int atual, anterior, aux;
-
+		double numero_fibonacci = 0;
+		double contador = 1;
+		double resposta = 0;
+		
+		while(numero_fibonacci < 4000000)
+		{
+			if((Funcoes.serieFibonacci(contador) % 2) == 0)
+			{
+				resposta = resposta + (Funcoes.serieFibonacci(contador));
+			}
+			numero_fibonacci = Funcoes.serieFibonacci(contador);
+				
+			contador++;
+		}
+		
+		System.out.println(resposta);
 	}
 
 }
